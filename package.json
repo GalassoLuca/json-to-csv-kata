@@ -4,7 +4,7 @@
   "description": "Create a csv string starting from a JSON object",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,9 @@
   "bugs": {
     "url": "https://github.com/GalassoLuca/json-to-csv-kata/issues"
   },
-  "homepage": "https://github.com/GalassoLuca/json-to-csv-kata#readme"
+  "homepage": "https://github.com/GalassoLuca/json-to-csv-kata#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
