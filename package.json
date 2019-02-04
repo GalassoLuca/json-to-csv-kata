@@ -1,0 +1,25 @@
+{
+  "name": "json-to-csv-kata",
+  "version": "1.0.0",
+  "description": "Create a csv string starting from a JSON object",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalassoLuca/json-to-csv-kata.git"
+  },
+  "keywords": [
+    "json",
+    "javascript",
+    "kata",
+    "tdd"
+  ],
+  "author": "Luca Galasso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalassoLuca/json-to-csv-kata/issues"
+  },
+  "homepage": "https://github.com/GalassoLuca/json-to-csv-kata#readme"
+}
