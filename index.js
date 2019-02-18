@@ -13,4 +13,6 @@ function objToCSV(obj) {
   return `${columns}\n${rows}`
 }
 
-function getColumnsName() { }
+function getColumnsName() {
+  return []
+}
