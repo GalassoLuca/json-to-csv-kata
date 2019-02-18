@@ -1,9 +1,9 @@
 module.exports = {
   objToCSV,
-  getRows
+  getColumnsName
 }
 
-function objToCSV (obj) {
+function objToCSV(obj) {
   if (!obj) {
     return ''
   }
@@ -13,6 +13,4 @@ function objToCSV (obj) {
   return `${columns}\n${rows}`
 }
 
-function getRows () {
-
-}
+function getColumnsName() { }

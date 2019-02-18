@@ -1,14 +1,14 @@
 const assert = require('assert')
-const {objToCSV, getRows} = require('..')
+const { objToCSV, getColumnsName } = require('..')
 
-describe('objToCSV()', function () {
+describe('getColumnsName()', function () {
   it('Should return empty array, if the input is not defined', function () {
-    assert.strictEqual(objToCSV(), [])
+    assert.strictEqual(getColumnsName(), [])
   })
 
   it('Should return empty array, if the input is empty array', function () {
     const obj = {}
-    assert.strictEqual(objToCSV(obj), [])
+    assert.strictEqual(getColumnsName(obj), [])
   })
 
   it('Should return correct array, for a simple given array', function () {
@@ -19,7 +19,7 @@ describe('objToCSV()', function () {
         c: 'c1'
       }
     ]
-    assert.strictEqual(objToCSV(), ['a', 'b', 'c'])
+    assert.strictEqual(getColumnsName(), ['a', 'b', 'c'])
   })
 
   it('Should return correct array, for objects with different keys', function () {
@@ -34,7 +34,7 @@ describe('objToCSV()', function () {
         z: 'z2'
       }
     ]
-    assert.strictEqual(objToCSV(), ['a', 'b', 'c'])
+    assert.strictEqual(getColumnsName(), ['a', 'b', 'c'])
   })
 })
 
