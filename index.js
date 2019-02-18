@@ -1,4 +1,7 @@
-module.exports = objToCSV
+module.exports = {
+  objToCSV,
+  getRows
+}
 
 function objToCSV (obj) {
   if (!obj) {
@@ -8,4 +11,8 @@ function objToCSV (obj) {
   const columns = Object.keys(obj[0]).join(',')
   const rows = obj.map(obj => Object.values(obj).join(',')).join('\n')
   return `${columns}\n${rows}`
+}
+
+function getRows () {
+
 }

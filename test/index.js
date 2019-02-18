@@ -1,7 +1,44 @@
 const assert = require('assert')
-const objToCSV = require('..')
+const {objToCSV, getRows} = require('..')
 
-describe('The given function', function () {
+describe('objToCSV()', function () {
+  it('Should return empty array, if the input is not defined', function () {
+    assert.strictEqual(objToCSV(), [])
+  })
+
+  it('Should return empty array, if the input is empty array', function () {
+    const obj = {}
+    assert.strictEqual(objToCSV(obj), [])
+  })
+
+  it('Should return correct array, for a simple given array', function () {
+    const obj = [
+      {
+        a: 'a1',
+        b: 'b1',
+        c: 'c1'
+      }
+    ]
+    assert.strictEqual(objToCSV(), ['a', 'b', 'c'])
+  })
+
+  it('Should return correct array, for objects with different keys', function () {
+    const obj = [
+      {
+        a: 'a1',
+        b: 'b1',
+        c: 'c1'
+      }, {
+        x: 'x2',
+        y: 'y2',
+        z: 'z2'
+      }
+    ]
+    assert.strictEqual(objToCSV(), ['a', 'b', 'c'])
+  })
+})
+
+describe('objToCSV()', function () {
   it('Should return empty string, if the input is not defined', function () {
     assert.strictEqual(objToCSV(), '')
   })
