@@ -11,6 +11,11 @@ describe.only('getColumnsName()', function () {
     assert.deepEqual(getColumnsName(obj), [])
   })
 
+  it('Should return empty array, if the input is an array with empty object', function () {
+    const obj = [{}]
+    assert.deepEqual(getColumnsName(obj), [])
+  })
+
   it('Should return correct array, for a simple given array', function () {
     const obj = [
       {
