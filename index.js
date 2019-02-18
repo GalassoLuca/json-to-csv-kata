@@ -1,4 +1,6 @@
-module.exports = (obj) => {
+module.exports = objToCSV
+
+function objToCSV (obj) {
   if (!obj) {
     return ''
   }

@@ -1,18 +1,18 @@
 const assert = require('assert')
-const objToCsv = require('..')
+const objToCSV = require('..')
 
 describe('The given function', function () {
   it('Should return empty string, if the input is not defined', function () {
-    assert.strictEqual(objToCsv(), '')
+    assert.strictEqual(objToCSV(), '')
   })
 
   it('Should return empty string, if the input is an empty array', function () {
     const emptyObj = []
 
-    assert.strictEqual(objToCsv(emptyObj), '')
+    assert.strictEqual(objToCSV(emptyObj), '')
   })
 
-  it('Should return the csv string, for a single object', function () {
+  it('Should return the CSV string, for a single object', function () {
     const obj = [
       {
         a: 'a1',
@@ -23,10 +23,10 @@ describe('The given function', function () {
 
     const expectedCSV = `a,b,c\na1,b1,c1`
 
-    assert.strictEqual(objToCsv(obj), expectedCSV)
+    assert.strictEqual(objToCSV(obj), expectedCSV)
   })
 
-  it('Should return a csv string, for multiple objects', function () {
+  it('Should return a CSV string, for multiple objects', function () {
     const obj = [
       {
         a: 'a1',
@@ -41,10 +41,10 @@ describe('The given function', function () {
 
     const expectedCSV = `a,b,c\na1,b1,c1\na2,b2,c2`
 
-    assert.strictEqual(objToCsv(obj), expectedCSV)
+    assert.strictEqual(objToCSV(obj), expectedCSV)
   })
 
-  it('Should return a csv string, for multiple objects with unsorted fields', function () {
+  it('Should return a CSV string, for multiple objects with unsorted fields', function () {
     const obj = [
       {
         a: 'a1',
@@ -59,7 +59,7 @@ describe('The given function', function () {
 
     const expectedCSV = `a,b,c\na1,b1,c1\na2,b2,c2`
 
-    assert.strictEqual(objToCsv(obj), expectedCSV)
+    assert.strictEqual(objToCSV(obj), expectedCSV)
   })
 
   it('Should return a CSV string, handling missing fields', function () {
@@ -77,6 +77,6 @@ describe('The given function', function () {
 
     const expectedCSV = `a,b,c,x,y,z\na1,b1,c1,,,\n,,,x2,y2,z2`
 
-    assert.strictEqual(objToCsv(obj), expectedCSV)
+    assert.strictEqual(objToCSV(obj), expectedCSV)
   })
 })
