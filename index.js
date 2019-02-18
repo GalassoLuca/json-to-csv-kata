@@ -13,6 +13,20 @@ function objToCSV(obj) {
   return `${columns}\n${rows}`
 }
 
-function getColumnsName() {
-  return []
+function getColumnsName(obj) {
+  if (!obj) {
+    return []
+  }
+
+  const columnsName = obj.reduce((columns, obj) => {
+    const currentObjectColumnsName = Object.keys(obj)
+
+    const filteredCurrentColumns = currentObjectColumnsName.filter(colName => !columns.includes(colName))
+
+    columns.push(...filteredCurrentColumns)
+
+    return columns
+  }, [])
+
+  return columnsName
 }

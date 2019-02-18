@@ -7,7 +7,7 @@ describe.only('getColumnsName()', function () {
   })
 
   it('Should return empty array, if the input is empty array', function () {
-    const obj = {}
+    const obj = []
     assert.deepEqual(getColumnsName(obj), [])
   })
 
