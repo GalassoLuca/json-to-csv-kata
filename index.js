@@ -4,13 +4,18 @@ module.exports = {
 }
 
 function objToCSV(obj) {
-  if (!obj) {
+  if (!obj || !obj.length) {
     return ''
   }
 
-  const columns = Object.keys(obj[0]).join(',')
-  const rows = obj.map(obj => Object.values(obj).join(',')).join('\n')
+  const columns = getColumnsName(obj)
+  const rows = obj.map(obj => getRowFromObject(columns, obj)).join('\n')
+
   return `${columns}\n${rows}`
+}
+
+function getRowFromObject(columns, obj) {
+  return columns.map(c => obj[c]).join(',')
 }
 
 function getColumnsName(obj) {

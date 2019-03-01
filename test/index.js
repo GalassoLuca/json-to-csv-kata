@@ -1,7 +1,7 @@
 const assert = require('assert')
 const { objToCSV, getColumnsName } = require('..')
 
-describe.only('getColumnsName()', function () {
+describe('getColumnsName()', function () {
   it('Should return empty array, if the input is not defined', function () {
     assert.deepEqual(getColumnsName(), [])
   })
