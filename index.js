@@ -3,13 +3,13 @@ module.exports = {
   getColumnsName
 }
 
-function objToCSV(obj) {
-  if (!obj || !obj.length) {
+function objToCSV(arrayOfObjects) {
+  if (!arrayOfObjects || !arrayOfObjects.length) {
     return ''
   }
 
-  const columns = getColumnsName(obj)
-  const rows = obj.map(obj => getRowFromObject(columns, obj)).join('\n')
+  const columns = getColumnsName(arrayOfObjects)
+  const rows = arrayOfObjects.map(obj => getRowFromObject(columns, obj)).join('\n')
 
   return `${columns}\n${rows}`
 }
@@ -18,20 +18,20 @@ function getRowFromObject(columns, obj) {
   return columns.map(c => obj[c]).join(',')
 }
 
-function getColumnsName(obj) {
-  if (!obj) {
+function getColumnsName(arrayOfObjects) {
+  if (!arrayOfObjects || !arrayOfObjects.length) {
     return []
   }
 
-  const columnsName = obj.reduce((columns, obj) => {
-    const currentObjectColumnsName = Object.keys(obj)
+  const columnsName = arrayOfObjects.reduce((columns, obj) => {
+    return Object
+      .keys(obj)
+      .reduce((columns, key) => {
+        columns.add(key)
+        return columns
+      }, columns)
 
-    const filteredCurrentColumns = currentObjectColumnsName.filter(colName => !columns.includes(colName))
+  }, new Set())
 
-    columns.push(...filteredCurrentColumns)
-
-    return columns
-  }, [])
-
-  return columnsName
+  return Array.from(columnsName)
 }
